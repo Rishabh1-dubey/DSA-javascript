@@ -15,7 +15,7 @@ while(i<arr1.length && j<arr2.length){
 
 
 
-
+//bhai abhi bs dsa and system design krna haii 
 
 while(j<arr2.length){
     merge[k++]=arr2[j++]
