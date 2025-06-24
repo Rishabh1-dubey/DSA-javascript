@@ -10,5 +10,5 @@ for(let  i=0; i<prices.length; i++){
 }
 console.log("The Best time Buy and Stock is ",Maxprice)
 
-
+   
 //  try to implement the whole in vs code 
