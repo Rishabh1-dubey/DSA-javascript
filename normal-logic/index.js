@@ -64,7 +64,7 @@
 // }
 // console.log(findDepth(arr));
 
-const arr = [1, [2, [3, 4]], 5];
+// const arr = [1, [2, [3, 4]], 5];
 // Output: 120
 
 // function maxvalue(arr) {
@@ -79,3 +79,37 @@ const arr = [1, [2, [3, 4]], 5];
 //   return max;
 // }
 // console.log(maxvalue(arr));
+// const arr = [1, [2, [3, 4]], 5];
+// Output: "1-2-3-4-5"
+
+// function converString(arr) {
+//   let result = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (Array.isArray(arr[i])) {
+//       result = result.concat(converString(arr[i]));
+//     } else {
+//       result.push(arr[i]);
+//     }
+//   }
+//   return result;
+// }
+// console.log(converString(arr).join("-"));
+
+const arr = [1, [2, [3, 4]], 5];
+
+// Output:
+// [5, [[4, 3], 2], 1]
+
+function reverseFlatter(arr) {
+  let result = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (Array.isArray(arr[i])) {
+      result.push(reverseFlatter(arr[i]));
+    } else {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+
+console.log(reverseFlatter(arr));
