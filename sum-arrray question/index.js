@@ -73,3 +73,54 @@ function missingNumber(arr) {
   }
 }
 console.log(missingNumber(arr));
+
+// -------------------------------------------------------------------------------
+// //remove duplicated
+// const arr =[1,2,3,4,4,5,6,7,8,]
+// //0/p:[1,2,3,4,5,6,7,8]
+
+// function remoreDuplicated(arr){
+
+//     let x =0
+//     for(let i=0; i<arr.length; i++){
+//         if(arr[i]>arr[x]){
+//             x++;
+//             arr[x]= arr[i]
+//         }
+//     }
+//         return arr.slice(0, x+1)
+// }
+// console.log(remoreDuplicated(arr))
+
+//unsorted array ke liyee
+// const arr =[1,2,4,4,5,3,6,3,3,3,7,8,4]
+
+// function unsortedArray(arr){
+//     let see=[]
+//     let res =[]
+//     for(let i=0; i<arr.length ;i++){
+//         if(!see[arr[i]]){
+//              see[arr[i]] = arr[i]
+//         }else{
+//             res.push(arr[i])
+//         }
+//     }
+//     return see
+
+// }
+// console.log(unsortedArray(arr))
+
+const arr3 = [1, 1, 2, 2, 2, 3, 4, 4, 5, 6, 6, 7];
+//Unique count = 7
+
+function sorted(arr) {
+  let x = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[x]) {
+      x = x + 1;
+      arr[x] = arr[i];
+    }
+  }
+  return x + 1;
+}
+console.log(sorted(arr3));
