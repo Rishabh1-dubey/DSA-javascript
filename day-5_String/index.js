@@ -1,36 +1,50 @@
-// let s ="Rishabh"
-// let rev= ""
+// check string is palindrome or not
+// let str = "hello world";
+// function strPalin(str) {
+//   str = str.toLowerCase().replace(/[^a-z0-9]/g, "");// agr sentence mai word de ya 3-4 vhar de to ye daal nhi to normal use kr loo
 
-// for (let i =s.length-1; i>=0; i--) {
-//     // console.log(s[i]);
-//     rev= rev+ s.charAt(i)
+//   let i = 0;
+//   let j = str.length - 1;
 
+//   while (i <= j) {
+//     if (str.charAt(i) !== str.charAt(j)) {
+//       return false;
+//     } else {
+//       i++;
+//       j--;
+//     }
+//   }
+//   return true;
 // }
+// console.log(strPalin(str));
 
-// console.log(rev)
+//count no of word
 
-//check number is palindrom or not
+let str = "my name is rishabh";
 
-// let num=  Number(prompt("enter your number"))
-// let strNUm = num.toString()
-// let reverseNUm = strNUm.split('').reverse().join("")
+// function conutWords(str) {
+//   let count = 0;
 
-// let checkNum = strNUm === reverseNUm
+//   if (str.trim === "") return 0;
 
-// console.log( "The Number is " + (checkNum ? "Palinddrom" : "Number is not a palindromoe") )
+//   return str.split(/\s+/).length;
+// }
+// console.log(conutWords(str));
 
-// check string is palindrom or not
+//using for loop
 
-let s = prompt("Enter your text here");
-let rev = "";
-
-for (let i = s.length - 1; i >= 0; i--) {
-    rev = rev + s.charAt(i); // Corrected mistake
+function countWords(str) {
+  let count = 0;
+  let inword = false;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== " " && !inword) {
+      count++;
+      inword = true;
+    }
+    if (str[i] === " ") {
+      inword = false;
+    }
+  }
+  return count;
 }
-
-if (rev == s) {
-    console.log("The text is a Palindrome: " + rev);
-} else {
-    console.log("The text is NOT a Palindrome: " + rev);
-}
-
+console.log(countWords(str));
