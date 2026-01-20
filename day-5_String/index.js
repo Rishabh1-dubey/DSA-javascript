@@ -20,7 +20,7 @@
 
 //count no of word
 
-let str = "my name is rishabh";
+// let str = "my name is rishabh";
 
 // function conutWords(str) {
 //   let count = 0;
@@ -33,18 +33,43 @@ let str = "my name is rishabh";
 
 //using for loop
 
-function countWords(str) {
-  let count = 0;
-  let inword = false;
+// function countWords(str) {
+//   let count = 0;
+//   let inword = false;
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] !== " " && !inword) {
+//       count++;
+//       inword = true;
+//     }
+//     if (str[i] === " ") {
+//       inword = false;
+//     }
+//   }
+//   return count;
+// }
+// console.log(countWords(str));
+
+let str = "aabbccdde";
+function firstNonRepeatingChar(str) {
+  let freq = {};
+
+  // Step 1
   for (let i = 0; i < str.length; i++) {
-    if (str[i] !== " " && !inword) {
-      count++;
-      inword = true;
-    }
-    if (str[i] === " ") {
-      inword = false;
+    let ch = str[i];
+    if (freq[ch] === undefined) {
+      freq[ch] = 1;
+    } else {
+      freq[ch]++;
     }
   }
-  return count;
+
+  // Step 2
+  for (let i = 0; i < str.length; i++) {
+    if (freq[str[i]] === 1) {
+      return str[i];
+    }
+  }
+
+  return null;
 }
-console.log(countWords(str));
+console.log(firstNonRepeatingChar(str));
