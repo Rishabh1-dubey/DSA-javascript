@@ -49,27 +49,64 @@
 // }
 // console.log(countWords(str));
 
-let str = "aabbccdde";
-function firstNonRepeatingChar(str) {
-  let freq = {};
+//find first non-repeating character
+// let str = "aabbccddeef";
+// function firstNonRepeatingChar(str) {
+//   let freq = {};
 
-  // Step 1
+//   // Step 1
+//   for (let i = 0; i < str.length; i++) {
+//     let ch = str[i];
+//     if (freq[ch] === undefined) {
+//       freq[ch] = 1;
+//     } else {
+//       freq[ch]++;
+//     }
+//   }
+
+//   // Step 2
+//   for (let i = 0; i < str.length; i++) {
+//     if (freq[str[i]] === 1) {
+//       return str[i];
+//     }
+//   }
+
+//   return null;
+// }
+// console.log(firstNonRepeatingChar(str));
+
+//--------------------------------------------------------------------------------
+// remove duplicat chracter
+
+// let str = "programming";
+// function removeDuplicate(str) {
+//   let obj = {};
+//   let result = "";
+//   for (let i = 0; i < str.length; i++) {
+//     if (!obj[str[i]]) {
+//       result += str[i];
+//       obj[str[i]] = true;
+//     }
+//   }
+//   return result;
+// }
+// console.log(removeDuplicate(str));
+
+// ----------------------------------------------------------------------------
+
+//find longest word in the sentect
+
+const str = "my name is rishabh dusdfdsfbey is the";
+function findLongestWord(str) {
+  str = str.split(" ");
+  let longword = "";
+
   for (let i = 0; i < str.length; i++) {
-    let ch = str[i];
-    if (freq[ch] === undefined) {
-      freq[ch] = 1;
-    } else {
-      freq[ch]++;
+    if (str[i].length > longword.length) {
+      longword = str[i];
     }
   }
-
-  // Step 2
-  for (let i = 0; i < str.length; i++) {
-    if (freq[str[i]] === 1) {
-      return str[i];
-    }
-  }
-
-  return null;
+  return longword;
 }
-console.log(firstNonRepeatingChar(str));
+
+console.log(findLongestWord(str));
